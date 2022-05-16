@@ -1,0 +1,202 @@
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    min-height: 100vh;  
+    font-size: 1rem;
+    color: antiquewhite; 
+    background-color: rgb(27, 26, 26);
+    
+}
+
+
+/*   NAV BAR CSS */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(27, 26, 26);
+    padding: 2.5rem 4rem;
+    height: max-content;
+}
+a{
+    text-decoration: none;
+    color: antiquewhite;   
+}
+#main-logo{
+    font-size: 1rem;
+    }
+.link{
+    display: inline-block;
+    position: relative;
+    padding-bottom: .25rem;
+}
+.link::before{
+    content:"";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: antiquewhite;
+    transition: width 0.25s ease-out;
+}
+.link:hover::before{
+    width: 100%;
+}
+ul{
+    list-style: none;
+    padding: 0;   
+}
+.nav-links, .nav-contacts{
+    display: flex;
+    gap:1rem;
+}
+
+/* LANDING PAGE CSS */
+#landing-page{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-rows: max-content auto;
+}
+.landing-content{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: auto;
+    gap: 0;
+}
+.name{
+    display: block;
+}
+header>p{
+    font-size: 1.4rem;
+}
+.blurb{
+    font-size: 5.5rem;
+}
+
+.img1{
+  max-width: 30rem;
+}
+.landing-image{
+    width: 100%;
+}
+
+/*  ABOUT PAGE CSS */
+.home-about{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    margin-bottom: 6rem;
+}
+.about-content{
+    display: grid;
+    grid-template-columns: 25vw max-content 25vw;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+}
+.about-heading, .portfolio-heading{
+    display: flex;
+    flex-direction: column;
+    margin: 3rem auto
+}
+.about-title, .portfolio-title{
+    font-size: 5.5rem;
+    
+}
+.about-subtitle, .portfolio-subtitle{
+    align-self: flex-end;
+}
+.about-images>img{
+    width: 100%;
+}
+.about-article{
+    padding: 0 2rem;
+    line-height: 2;
+    font-size: 1.25rem;
+}
+.about-center>p{
+    max-width: 30vw;
+    margin: 1.2rem 0;
+}
+/* .image-left, .image-right{
+    place-self: center;
+}
+.image-right{
+    align-self: start;
+} */
+
+
+/*  PORTFOLIO PAGE CSS */
+.home-portfolio{
+    height: 100vh;
+}
+.portfolio-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    
+}
+.item{
+    display: grid; 
+    max-width: min(80vh,25em);  
+    border-radius:1rem;
+    transition: all 0.3s ease-in-out;
+    
+    grid-template-areas: 
+    "image"
+    "content";
+}
+.item:hover{
+    box-shadow: 0 5px 15px rgba(0,0,0,8);
+    transform: scale(1.1);
+}
+.item1-image{
+    width: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    grid-area: image;
+}
+.item-content{
+    background-color: rgb(16, 15, 15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 2rem;
+    gap: 1.5rem;
+    grid-area: content;
+}
+.item-blurb{
+    line-height: 1.5;
+}
+.buttons{
+    display: flex;
+    gap: 6px;
+}
+.item-button{
+    padding: .5rem;
+    border-radius: 1rem;
+    border: none;
+    font-weight: bold;
+    transition: all 0.1s ease-in;
+
+}
+.item-button:hover{
+    background-color: rgb(115, 115, 115);
+}
+

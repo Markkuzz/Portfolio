@@ -1,15 +1,19 @@
-console.log('This Kinda Works?')
 
-const hamBurger=document.querySelector('#hamburger');
-const navMenu=document.querySelector('#main-nav');
 
-hamBurger.addEventListener('click', ()=> {
-    hamBurger.classList.toggle('active');
+
+// HAMBURGER MENU
+const hamburger=document.querySelector('.hamburger');
+const navMenu=document.querySelector('nav');
+const body=document.querySelector('body');
+
+hamburger.addEventListener('click', ()=> {
+    hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
-});
+    body.classList.toggle('active');
+})
 
-document.querySelectorAll('.nav-link').forEach(e=> e.addEventListener('click', ()=>{
-    hamBurger.classList.remove('active');
+document.querySelectorAll('.link').forEach(n=>n.addEventListener('click', ()=>{
+    hamburger.classList.remove('active');
     navMenu.classList.remove('active');
-
+    body.classList.remove('active');
 }))
