@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    
 }
 
 body{
@@ -66,11 +65,15 @@ ul{
     list-style: none;
     padding: 0;   
 }
-.nav-links, .nav-contacts{
+.nav-links{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:1rem;
+    gap:2rem;
+}
+.nav-contacts{
+    display: flex;
+    gap: 1rem;
 }
 
 
@@ -79,7 +82,6 @@ ul{
     margin: 2rem;
     position: fixed;
     z-index: 1;
-    /* display: block; */
 }
 .bar{
     position: relative;
@@ -101,80 +103,23 @@ ul{
     transform: translateY(-8px) rotate(-45deg);
 }
 
+/*  PORTFOLIO PAGE CSS */
 
-
-
-/* LANDING PAGE CSS */
-#landing-page{
-    display: flex;
-    height: 100vh;
-
-    
-    
-}
-.landing-content{
+.portfolio-heading{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:4rem;
-    height: 100vh;
-    width: 100%;
-    
+    margin: 3rem auto;
 }
-.name{
-    display: block;
-}
-.blurb{
-   font-size: 2.5rem;
-  
-}
-.img1{
-  max-width: min(80vw, 22.5rem);
-
-}
-.landing-image{
-    width: 100%;
-}
-
-/*  ABOUT PAGE CSS */
-.home-about{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    margin-bottom: 6rem;
-}
-.about-heading, .portfolio-heading, .contact-heading{
-    display: flex;
-    flex-direction: column;
-    margin: 3rem auto
-}
-.about-title, .portfolio-title, .contact-title{
+.portfolio-title{
     font-size: 3rem;
     
 }
-.about-subtitle, .portfolio-subtitle, .contact-subtitle-bottom {
+.portfolio-subtitle{
     align-self: flex-end;
 }
-.about-article{
-    padding: 0 2rem;
-    line-height: 2;
-    font-size: 1.25rem;
-}
-.about-center>p{
-    margin: 1.2rem 0;
-    text-align: center;
-}
-.image-left, .image-right{
-    display: none;
-}
-
-
-/*  PORTFOLIO PAGE CSS */
 .home-portfolio{
     height: max-content;
+    padding-top: 100px;
 }
 .portfolio-container{
     display: flex;
@@ -238,31 +183,6 @@ ul{
     background-color: rgb(115, 115, 115);
 }
 
-/* CONTACT PAGE CSS */
-.home-contact{  
-   display: grid;
-   height: 95vh;
-
-    
-   
-}
-.contact-container{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5rem;
-    height: 95vh;    
-}
-.contact-heading{
-    align-items: center;
-    margin-top: 7rem;
-}
-.contact-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
 /* FOOTER CSS */
 footer{
     display: flex;
@@ -280,34 +200,7 @@ footer{
     font-size: .75rem;
     opacity: .5;
 }
-
-
 /* MEDIA QUERIES */
-@media (min-width:768px){
-    .about-content{
-        display: grid;
-        max-width: min(80vw, 30rem);
-        grid-template-columns: 30vw max-content;
-        align-content: center;
-        justify-content: center;
-    }
-    .about-center>p{
-        max-width: 30vw;
-        text-align: start;
-    }
-    .image-left{
-        display: block;
-        width: 100%;
-        align-self: center;
-    }
-    .landing-content{
-        flex-direction: row;
-        justify-content: space-evenly;
-        height: auto;
-    }
-
-}
-
 @media (min-width:960px){
     .hamburger-menu{
         display: none;
@@ -321,26 +214,17 @@ footer{
     .nav-links, .nav-contacts{
         flex-direction: row;
     }
-
-    .about-content{
-    grid-template-columns: 25vw max-content 25vw;
-    align-content: center;
+    .nav-center{
+        margin-left: 5rem;
     }
-    .image-right{
-        display: block;
-        width: 100%;
-        align-self: center;
-    }
-    .blurb, .portfolio-title, .about-title, .contact-title{
+    .portfolio-title{
         font-size: 3.5rem;
     }
     
 
 }
 @media (min-width:1440px){
-    .blurb{
-        font-size: 5.5rem;
-    }
+
     .item-container{
         grid-template-columns: repeat(2,1fr);
     }

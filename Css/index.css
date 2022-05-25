@@ -109,12 +109,11 @@ ul{
 
 
 /* LANDING PAGE CSS */
-.container{
+#landing-page{
     display: flex;
-    flex-direction: column;
     height: 100vh;   
 }
-.home-about{
+.landing-content{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -122,7 +121,6 @@ ul{
     gap:4rem;
     height: 100vh;
     width: 100%;
- 
     
 }
 .name{
@@ -147,6 +145,7 @@ ul{
     flex-direction: column;
     height: 100%;
     width: 100%;
+    margin-bottom: 6rem;
 }
 .about-heading, .portfolio-heading, .contact-heading{
     display: flex;
@@ -172,6 +171,99 @@ ul{
 .image-left, .image-right{
     display: none;
 }
+
+
+/*  PORTFOLIO PAGE CSS */
+.home-portfolio{
+    height: max-content;
+}
+.portfolio-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 2.5rem;
+    
+}
+.item{
+    display: grid; 
+    max-width: min(80vh,25em);  
+    border-radius:1rem;
+    transition: all 0.3s ease-in-out;
+    
+    grid-template-areas: 
+    "image"
+    "content";
+}
+.item:hover{
+    box-shadow: 0 5px 15px rgba(0,0,0,8);
+    transform: scale(1.1);
+}
+.item1-image{
+    width: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    grid-area: image;
+}
+.item-content{
+    background-color: rgb(16, 15, 15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 2rem;
+    gap: 1.5rem;
+    grid-area: content;
+}
+.item-blurb{
+    line-height: 1.5;
+}
+.buttons{
+    display: flex;
+    gap: 6px;
+}
+.item-button{
+    padding: .5rem;
+    border-radius: 1rem;
+    border: none;
+    font-weight: bold;
+    transition: all 0.1s ease-in;
+
+}
+.item-button:hover{
+    background-color: rgb(115, 115, 115);
+}
+
+/* CONTACT PAGE CSS */
+.home-contact{  
+   display: grid;
+   height: 95vh;
+
+    
+   
+}
+.contact-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    height: 95vh;    
+}
+.contact-heading{
+    align-items: center;
+    margin-top: 7rem;
+}
+.contact-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
 /* FOOTER CSS */
 footer{
     display: flex;
@@ -181,16 +273,14 @@ footer{
     margin: 1rem auto;
     gap: 1rem;
     
-}  
-.footer-links{
-    display: flex;
-    gap: 3rem;
+}
+.footer-list{
+    display: none;
 }
 .copyright{
     font-size: .75rem;
     opacity: .5;
 }
-
 
 
 /* MEDIA QUERIES */
@@ -211,6 +301,12 @@ footer{
         width: 100%;
         align-self: center;
     }
+    .landing-content{
+        flex-direction: row;
+        justify-content: space-evenly;
+        height: auto;
+    }
+
 }
 
 @media (min-width:960px){
@@ -222,7 +318,6 @@ footer{
         height: max-content;
         flex-direction: row;
         justify-content: space-between;
-        position: initial;
     }
     .nav-links, .nav-contacts{
         flex-direction: row;
@@ -230,10 +325,8 @@ footer{
     .nav-center{
         margin-left: 5rem;
     }
-
     .about-content{
     grid-template-columns: 25vw max-content 25vw;
-
     align-content: center;
     }
     .image-right{
@@ -241,10 +334,27 @@ footer{
         width: 100%;
         align-self: center;
     }
-    .about-title{
+    .blurb, .portfolio-title, .about-title, .contact-title{
         font-size: 3.5rem;
     }
-    .footer-list{
+    
+
+}
+@media (min-width:1440px){
+    .blurb{
+        font-size: 5.5rem;
+    }
+    .item-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .home-contact{
         display: none;
+    }
+    .footer-list{
+        display: block;
+    }
+    .footer-links{
+        display: flex;
+        gap: 3rem;
     }
 }
