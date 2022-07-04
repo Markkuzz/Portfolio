@@ -207,8 +207,9 @@ ul{
     box-shadow: 0 5px 15px rgba(0,0,0,8);
     transform: scale(1.1);
 }
-.item1-image{
+.item-image{
     width: 100%;
+    object-fit: cover;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     grid-area: image;
